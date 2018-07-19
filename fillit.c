@@ -6,7 +6,7 @@
 /*   By: wbraeckm <wbraeckm@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 13:10:30 by wbraeckm          #+#    #+#             */
-/*   Updated: 2018/07/13 11:24:49 by wbraeckm         ###   ########.fr       */
+/*   Updated: 2018/07/19 12:29:35 by wbraeckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,29 @@ void	ft_exit_putendl(char *str, int fd)
 	exit(0);
 }
 
-char	*ft_empty_map(size_t width)
+void	ft_empty_map(char *str, size_t width)
 {
-	char	*new;
 	size_t	i;
 
-	new = ft_strnew((width + 1) * (width));
-	if (new == NULL)
-		return (NULL);
 	i = 0;
 	while (i < (width + 1) * (width))
 	{
 		if (i % (width + 1) == width)
-			new[i] = '\n';
+			str[i] = '\n';
 		else
-			new[i] = '.';
+			str[i] = '.';
 		i++;
 	}
-	return (new);
+	str[i] = '\0';
 }
 
 void	ft_print_map(t_tetriminos *list, size_t i, size_t map_size)
 {
-	char	*str;
+	char	str[map_size * (map_size + 1) + 1];
 	size_t	x;
 	size_t	y;
 
-	str = ft_empty_map(map_size);
+	ft_empty_map(str, map_size);
 	while (i)
 	{
 		y = 0;
@@ -81,6 +77,8 @@ int		main(int argc, char **argv)
 		ft_exit_putendl("error", 1);
 	i = ft_parse_tetris(tetris, fd);
 	if (i == 0)
+		ft_exit_putendl("error", 1);
+	if (close(fd) == -1)
 		ft_exit_putendl("error", 1);
 	size = ft_tetris_resolve(tetris, i, map);
 	ft_print_map(tetris, i, size);

@@ -6,7 +6,7 @@
 /*   By: wbraeckm <wbraeckm@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 15:30:23 by wbraeckm          #+#    #+#             */
-/*   Updated: 2018/07/05 15:49:04 by wbraeckm         ###   ########.fr       */
+/*   Updated: 2018/07/19 12:18:39 by wbraeckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ void	ft_tetris_process(t_tetriminos *tetris, char *data, size_t t_data[])
 	size_t	i;
 	size_t	j;
 
+	if (t_data[4] != 4)
+		return ;
 	j = 0;
-	while (j < (tetris->height > 4 ? 4 : tetris->height))
+	while (j < tetris->height)
 	{
 		i = 0;
-		while (i < (tetris->width > 4 ? 4 : tetris->width))
+		while (i < tetris->width)
 		{
 			if (ft_tetris_charat(data,
 				t_data[0] + i, t_data[2] + j) == '#')
