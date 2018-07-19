@@ -6,7 +6,7 @@
 #    By: wbraeckm <wbraeckm@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/14 12:58:31 by wbraeckm          #+#    #+#              #
-#    Updated: 2018/07/13 11:29:45 by wbraeckm         ###   ########.fr        #
+#    Updated: 2018/07/19 12:48:42 by wbraeckm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,10 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-ITEMS = fillit.c fillit_parser.c ft_strdup.c ft_strnew.c \
-		ft_strlen.c ft_memalloc.c ft_memset.c ft_bzero.c \
+ITEMS = fillit.c fillit_parser.c \
+		ft_strlen.c ft_memset.c ft_bzero.c \
 		ft_putendl_fd.c ft_putstr_fd.c ft_putchar_fd.c \
-		ft_memcpy.c fillit_validator.c fillit_resolver.c \
-		ft_strrepl.c
+		fillit_validator.c fillit_resolver.c
 
 SRCS = $(ITEMS)
 
