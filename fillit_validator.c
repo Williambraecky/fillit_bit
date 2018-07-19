@@ -6,7 +6,7 @@
 /*   By: wbraeckm <wbraeckm@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 15:30:23 by wbraeckm          #+#    #+#             */
-/*   Updated: 2018/07/19 12:18:39 by wbraeckm         ###   ########.fr       */
+/*   Updated: 2018/07/19 14:29:26 by wbraeckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		ft_tetris_validateform(t_tetriminos *tetris, char *data,
 			t_data[2] = (size_t)i < t_data[2] ? (size_t)i : t_data[2];
 			t_data[3] = (size_t)i > t_data[3] ? (size_t)i : t_data[3];
 			t_data[5] += ft_tetris_countneighbours(data, j, i);
-			if (++t_data[4] > 4 || t_data[5] > 8)
+			if (++t_data[4] > 4)
 				return (0);
 		}
 	}
