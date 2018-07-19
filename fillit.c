@@ -6,7 +6,7 @@
 /*   By: wbraeckm <wbraeckm@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 13:10:30 by wbraeckm          #+#    #+#             */
-/*   Updated: 2018/07/19 12:29:35 by wbraeckm         ###   ########.fr       */
+/*   Updated: 2018/07/19 14:38:37 by wbraeckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ void	ft_print_map(t_tetriminos *list, size_t i, size_t map_size)
 int		main(int argc, char **argv)
 {
 	t_tetriminos	tetris[26];
-	uint16_t		map[16];
+	uint16_t		map[19];
 	size_t			i;
 	int				size;
 	int				fd;
 
-	ft_bzero(map, sizeof(uint16_t) * 16);
+	ft_bzero(map, sizeof(uint16_t) * 19);
 	if (argc == 1 || argc > 2)
 		ft_exit_putendl("usage: ./fillit fillit_file", 1);
 	fd = open(argv[1], O_RDONLY);

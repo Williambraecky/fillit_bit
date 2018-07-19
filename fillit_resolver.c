@@ -6,7 +6,7 @@
 /*   By: wbraeckm <wbraeckm@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 16:00:33 by wbraeckm          #+#    #+#             */
-/*   Updated: 2018/07/13 11:54:50 by wbraeckm         ###   ########.fr       */
+/*   Updated: 2018/07/19 14:38:48 by wbraeckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		ft_tetris_resolve(t_tetriminos *list, size_t len, uint16_t *map)
 		sol_size++;
 	while (!ft_find_solution(list, sol_size, len, map) && sol_size < 16)
 	{
-		ft_bzero(map, sizeof(uint16_t) * 16);
+		ft_bzero(map, sizeof(uint16_t) * 19);
 		sol_size++;
 	}
 	return ((int)sol_size);
