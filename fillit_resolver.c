@@ -6,7 +6,7 @@
 /*   By: wbraeckm <wbraeckm@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 16:00:33 by wbraeckm          #+#    #+#             */
-/*   Updated: 2018/07/19 14:38:48 by wbraeckm         ###   ########.fr       */
+/*   Updated: 2018/07/22 11:43:28 by wbraeckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_calculate_x(t_tetriminos *tetris)
 	if (tetris->similar == NULL)
 		return (0);
 	if (tetris->similar->y == tetris->y)
-		return (tetris->similar->x + tetris->width);
+		return (tetris->similar->x);
 	return (0);
 }
 
